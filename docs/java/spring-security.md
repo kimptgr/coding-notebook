@@ -1,6 +1,6 @@
 ---
 title: Spring Security et JWT
-sidebar_position: 1
+sidebar_position:1
 ---
 
 # CDA
