@@ -6,16 +6,15 @@ ex : sécurité, synchronisation, logging, cache...
 ## Concepts
  ### Aspect : Classe qui contient une logique transversale (log, sécurité, transaction…).
  ### Join Point : Point précis dans l’exécution du programme (ex: appel d’une méthode, lancement d’un constructeur).
-
-### Pointcut : Règle qui sélectionne les join points (ex: toutes les méthodes d’un package).
-### Advice : Code exécuté autour du join point.
+ ### Pointcut : Règle qui sélectionne les join points (ex: toutes les méthodes d’un package).
+ ### Advice : Code exécuté autour du join point.
 #### Points principaux
 - @Before → avant l’exécution
 - @After → après l’exécution
 - @AfterReturning → après succès
 - @AfterThrowing → en cas d’exception
 - @Around → avant + après (le plus puissant)
-### Weaving : Moment où l'aspect est appliqué
+ ### Weaving : Moment où l'aspect est appliqué
 - à la compilation
 - au chargement
 - à l’exécution (Spring AOP)
