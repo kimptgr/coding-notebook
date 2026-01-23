@@ -1,6 +1,6 @@
 ---
-title: Spring Security et JWT et middle ware perso
-sidebar_position:1
+title: Spring Security et JWT et middleware perso
+sidebar_position: 1
 ---
 
 # CDA

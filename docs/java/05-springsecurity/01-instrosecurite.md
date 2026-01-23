@@ -1,22 +1,37 @@
+---
+title: Spring Security
+sidebar_position: 1
+---
+
 # Introduction à la sécurité
+
 ## Spring security
+
 Couvre :
+
 - Authentification
 - Habilitation
 - Protège du CSRF
 
 build.gradle :
+
 ```
 implementation 'org.springframework.boot:spring-boot-starter-security'
 ```
+
 > Par défault BasicAuth
+
 - login par défault : user
 - mdp généré par spring visible dans la console
 
 ### Configuration de la gestion de l'authentification et des habilitations
-Authentification : 
+
+Authentification :
+
 - la stratégie pour les utilisateurs (en mémoire, JDBC, LDAP [AD Directory], …)
 - algo pour chiffrer mdp (noop, bcrypt, argon2...)
+
+  ![Authentification sur un serveur](\img\java\springsecurity\serveur-client-jwt.jpg)
 
 ```java
 package fr.eni.tp.security;
@@ -77,36 +92,45 @@ public class WebSecurityConfig {
 
 }
 ```
+
 - @EnableWebSecurity pour configurer le Filterchain
 - csrf.disable() pour requêtes =/= GET
 
 ## Intro à JWT
+
 - Authentification Stateless => pas de sessions côté serveur
 - Utilisation d'un jeton
+  ![Authentification sur un serveur](\img\java\springsecurity\cyclejwtauthentification.jpg)
 
 ### JWT (JSON Web Token)
--  objet JSON qui contient des paires clef-valeur
+
+- objet JSON qui contient des paires clef-valeur
 - 3 parties
- - Hearder (en-tête)  type de jeton et l’algorithme de chiffrement
- - Payload (charge utile) informations de l’utilisateur transmises à l’application.
-  - Clef/valeur appelées « claims »
-  - 3 types de « claims » : enregistrées, privées ou publiques
- - Signature 
-   - garantit que le jeton n’est pas modifié par des tiers non autorisés
-  - est un encodage base64 de : Header + Payload + clef secrète (ou une paire de clefs)
-https://www.jwt.io/
+- Hearder (en-tête)  type de jeton et l’algorithme de chiffrement
+- Payload (charge utile) informations de l’utilisateur transmises à l’application.
+- Clef/valeur appelées « claims »
+- 3 types de « claims » : enregistrées, privées ou publiques
+- Signature
+  - garantit que le jeton n’est pas modifié par des tiers non autorisés
+- est un encodage base64 de : Header + Payload + clef secrète (ou une paire de clefs)
+  https://www.jwt.io/
+  ![Cycle duu jeton](\img\java\springsecurity\cyclejwtauthentification.jpg)
 
 # Mise en place
+
 build.gradle
+
 ```
 // JWT
 implementation 'io.jsonwebtoken:jjwt-api:0.13.0'
 runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.13.0'
 runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.13.0'
 ```
-[.\monarborescence]
+
+![Arborescence de la sécurité](\img\java\springsecurity\monarborescence.jpg)
 
 ## AuthController
+
 ```java
 @Profile("!mock")
 @RestController
@@ -149,6 +173,7 @@ public class AuthController {
 ```
 
 ## CsrfController
+
 ```java
 @Profile("!mock")
 @RestController
@@ -252,7 +277,9 @@ public class CsrfController {
     }
 }
 ```
+
 ## JWTService
+
 ```java
 /**
  * Service responsible for generating and validating JWT tokens.
@@ -328,14 +355,18 @@ public class JwtService {
 }
 
 ```
+
 ## LoginRequest
+
 ```java
 public class LoginRequest {
     public String login;
     public String password;
 }
 ```
+
 ## JpaUserDetailsService
+
 ```java
 @Profile("!mock")
 @Service
@@ -363,7 +394,9 @@ public class JpaUserDetailsService implements UserDetailsService {
     }
 }
 ```
+
 ## MockSecurityConfig
+
 ```java
 @Configuration
 @Profile("mock")
@@ -437,4 +470,5 @@ public class MockSecurityConfig {
     }
 }
 ```
+
 ###

@@ -1,10 +1,14 @@
-title: Exception handler
 ---
+title: Exception handler
+sidebar_position: 0
+---
+
 # Exception handler
+
 Déclaration d’une classe (Exception Handler) annotée @ControllerAdvice
 
-
 Déclaration de méthodes annotées @ExceptionHandler pour capturer et traiter des exceptions Java
+
 ```java
 @ControllerAdvice
 public class AppExceptionHandler {
@@ -17,6 +21,7 @@ return new ResponseEntity<String>(ex.getMessage(), HttpStatus.NOT_ACCEPTABLE);
 ```
 
 Dans notre application web service, quels types d’exception existent-ils et où les gérer ?
+
 - A tout niveau de l’architecture, il y a des Exception (plusieurs types)
 - Au niveau DAL : créées par Spring Data JPA ou la driver de la base
 - Au niveau BLL :
@@ -25,10 +30,9 @@ Dans notre application web service, quels types d’exception existent-ils et o�
 - Au niveau contrôleur / BO :
 - Gestion d’exception de la couche BLL
 - Activation de validation (@Valid)
-L’utilisation d’un @ControllerAdvice va permettre de capturer toutes celles non traitées
+  L’utilisation d’un @ControllerAdvice va permettre de capturer toutes celles non traitées
 
-
-```java
+````java
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     private final LocaleHelper localeHelper;
@@ -137,6 +141,4 @@ public class GlobalExceptionHandler {
         return ResponseEntity.badRequest().body(response);
     }
 }
-```
-
-
+````

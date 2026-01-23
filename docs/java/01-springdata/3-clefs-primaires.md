@@ -2,7 +2,7 @@
 title: Clés primaires composites
 ---
 
-## 🔑 Clés primaires composites
+## Clés primaires composites
 
 - Méthode 1 — @IdClass
 

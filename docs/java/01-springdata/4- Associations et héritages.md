@@ -3,7 +3,7 @@ title: Association et héritage
 sidebar_position: 3
 ---
 
-## 🔗 Associations
+## Associations
 
 # Direction
 
@@ -35,7 +35,7 @@ public class Employee {
 
 ⚠️ Attention à toString() et equals() (boucles infinies)
 
-## 🧬 Héritage JPA
+## Héritage JPA
 
 ```java
 @Entity

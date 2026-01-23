@@ -3,7 +3,7 @@ title: Récupération de données
 sidebar_position: 5
 ---
 
-## 🔍 JPQL & requêtes
+## JPQL & requêtes
 
 # JPQL
 

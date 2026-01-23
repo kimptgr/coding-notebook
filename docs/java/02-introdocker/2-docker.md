@@ -30,7 +30,7 @@ Dans un contexte de développement professionnel, il est souvent nécessaire de 
 
 ### Solution
 
-👉 **Docker** permet de standardiser l’environnement de développement.
+**Docker** permet de standardiser l’environnement de développement.
 
 Dans nos projets, **MongoDB sera installé via Docker** afin de simplifier son déploiement.
 
@@ -55,11 +55,11 @@ Docker est une **solution de virtualisation de services** permettant d’exécut
 
 Docker est particulièrement adapté aux contextes suivants :
 
-- 🔁 Intégration continue (CI)
-- ⚙️ DevOps
-- 🧪 Tests rapides d’applications
-- 🚀 Déploiement automatisé
-- 🌍 Gestion de plusieurs environnements
+- Intégration continue (CI)
+- DevOps
+- Tests rapides d’applications
+- Déploiement automatisé
+- Gestion de plusieurs environnements
   - Développement
   - Test
   - Préproduction

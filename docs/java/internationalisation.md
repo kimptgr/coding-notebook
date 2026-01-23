@@ -1,33 +1,53 @@
+---
+title: Internationalisation
+sidebar_position: 0
+---
+
 # Internationalisation I18N
+
 ## Fichiers properties par langue
+
 - messages.properties
+
 ```
 employee.civility.error=Civility is not valid or empty
 ```
+
 - messages_en.properties
 - messages_fr.properties
+
 ```
 employee.civility.error=La civilité est incorrecte ou non renseignée
 ```
+
 ## Encodage par défault
+
 Dans application.properties
+
 - spring.messages.encoding=UTF-8
 - La langue par défaut : spring.web.locale=en
 
 ## Utilisation dans les BO
+
 ```java
 @NotNull(message = "{employee.civility.error}")
 private Civilite civilite;
 ```
+
 ## Utilisation dans les contrôleur
+
 - Injection Bean MessageSource
 - Injection de la locale
-Appel des clefs via getMessages
+  Appel des clefs via getMessages
+
 ```java
 final String titreMsg = messageSource.getMessage("notvalidexception", null, locale);
 ```
-# Pour forcer la locale dans l'application 
+
+# Pour forcer la locale dans l'application
+
 i18n.config
+
 ```java
     @Configuration
     public class LocaleConfig
@@ -41,7 +61,9 @@ i18n.config
 ```
 
 # Pour forcer la locale dans l'application
+
 package : i18n.config
+
 ```java
     @Configuration
     public class LocaleConfig
@@ -55,6 +77,7 @@ package : i18n.config
 ```
 
 # Pour alléger le controller
+
 ```java
 /**
  * Resolves localized messages with parameters.
@@ -85,12 +108,14 @@ public class LocaleHelper {
 ```
 
 Dans le controller
-    
+
 ```java
 response.message = localeHelper.i18n(response.message, new String[]{idArticle});
 
 ```
+
 Dans message{}.properties
+
 ```java
 ARTICLE_NOT_FOUND=Article not found (id: {0})
 ```

@@ -1,7 +1,14 @@
+---
+title: Spring Web Service
+sidebar_position: 0
+---
+
 # Web service
-Application  manipulable au travers d’API sur Internet
+
+Application manipulable au travers d’API sur Internet
 
 # Spring web
+
 - RestController
 - ResponseEntity
 - librairies jackson : mapping pojo / json
@@ -12,5 +19,6 @@ ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body("Votre identifiant n'est p
 ```
 
 ## spring-boot-starter-validation
+
 - Utilise annotations sur les BOs
 - Utilise @Valid avec @RequestBody

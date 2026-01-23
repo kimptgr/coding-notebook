@@ -3,7 +3,7 @@ title: Spring Data
 sidebar_position: 1
 ---
 
-## 📚 SOMMAIRE
+## SOMMAIRE
 
 1. Introduction à Spring Data
 2. Introduction à Spring Data JPA
@@ -59,7 +59,7 @@ JDBC
 Database
 ```
 
-## ⚙ Configuration DataSource minimal
+## Configuration DataSource minimal
 
 ```application.properties
 spring.datasource.url=jdbc:sqlserver://localhost;databaseName=DEMO_DB
@@ -67,7 +67,7 @@ spring.datasource.username=sa
 spring.datasource.password=Password
 ```
 
-## 📘 Définitions essentielles
+## Définitions essentielles
 
 **ORM** : Mapping entre objets Java et tables SQL
 
@@ -90,7 +90,7 @@ spring.datasource.password=Password
   }
 ```
 
-## 🔄 Cycle de vie des entités
+## Cycle de vie des entités
 
 New / Transient
 Managed
@@ -98,7 +98,7 @@ Detached
 Removed
 ➡ JPA limite les requêtes SQL jusqu’au commit
 
-## 🔐 Transactions
+## Transactions
 
 Automatiques sur INSERT / UPDATE / DELETE
 Transaction métier avec @Transactional
@@ -123,7 +123,7 @@ Respect des propriétés ACID
 - I Isolation Transactions indépendantes
 - D Durability Données persistantes
 
-## 🔑 Clés primaires composites
+## Clés primaires composites
 
 - Méthode 1 — @IdClass
 
@@ -170,7 +170,7 @@ public class OrderProduct {
 
 ⚠ modifie la structure de l’entité
 
-## 🔗 Associations
+## Associations
 
 # Direction
 
@@ -202,7 +202,7 @@ public class Employee {
 
 ⚠️ Attention à toString() et equals() (boucles infinies)
 
-## 🧬 Héritage JPA
+## Héritage JPA
 
 ```java
 @Entity
@@ -232,7 +232,7 @@ JOINED
 - Jointures SQL
 - Plus propre, moins performant
 
-## 🔍 JPQL & requêtes
+## JPQL & requêtes
 
 # JPQL
 
