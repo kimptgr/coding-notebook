@@ -118,3 +118,6 @@ Spring Data JPA permet de manipuler des objets Java pendant que Hibernate gère 
 ## À retenir
 
 > Spring Data JPA permet de manipuler des objets Java pendant que Hibernate gère le SQL et les transactions à ta place.
+
+
+- il existe Spring Data rest qui génère les contrôleurs automatiquement sur les repo de Spring Data
