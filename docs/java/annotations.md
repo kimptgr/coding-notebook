@@ -31,3 +31,13 @@ Le code est généré automatiquement à la compilation.
 - `@OneToMany`
 - `@ManyToOne`
 - `@ManyToMany`
+- `@RestController`
+- `@RequestMapping`
+- `@GetMapping`
+- `@PostMapping`
+- `@RequestBody`
+- `@Valid`
+- `@PostMapping`
+- `@OpenAPIDefinition`
+- `@Tag`
+- `@Operation`
