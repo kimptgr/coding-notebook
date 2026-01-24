@@ -2,16 +2,30 @@
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
+This website contains structured notes taken during my CDA (Concepteur Développeur d’Applications) training.
+
+## What you will find here
+
+- Java and object-oriented programming concepts
+- Web fundamentals (HTTP, REST, APIs)
+- Databases and SQL
+- Framework notes and best practices
+- Code examples and explanations
+
+> The goal is to keep concepts clear, concise, and easy to revisit.
+
+This notebook is a living project and will evolve throughout my training and future professional experience.
+
 ## Installation
 
 ```bash
-yarn
+npm i
 ```
 
 ## Local Development
 
 ```bash
-yarn start
+npm start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
