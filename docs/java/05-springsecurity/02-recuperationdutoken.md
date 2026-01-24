@@ -1,5 +1,5 @@
 ---
-title: Spring Security : obtention du token
+title: "Spring Security : Obtention du token"
 sidebar_position: 2
 ---
 
