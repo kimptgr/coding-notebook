@@ -83,6 +83,7 @@ public class WebSecurityConfig {
      * @param config AuthenticationConfiguration provided by Spring Security
      * @return AuthenticationManager instance
      */
+    // Bean nécessaire pour être injecté et utilisé avec authenticationManager.authenticate(...)
     @Bean
     public AuthenticationManager authenticationManager(
             AuthenticationConfiguration config
