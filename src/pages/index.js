@@ -12,30 +12,29 @@ export default function Home() {
         <h1>Coding Notebook</h1>
 
         <p>
-          Welcome to my personal coding notebook. This website contains
-          structured notes taken during my
-          <strong> CDA (Concepteur Développeur d’Applications)</strong>{" "}
-          training.
+          Bienvenue sur <strong>coding notebook</strong> ! C'est un site qui
+          recense mes prise de notes. Je l'ai commencé durant mon année de
+          préparation au diplôme
+          <strong>
+            {" "}
+            CDA (Concepteur·ice Développeur·euse d’Applications)
+          </strong>{" "}
+          .
         </p>
 
-        <h2>What you will find here</h2>
+        <h2>Ce qu'on peut y trouver</h2>
         <ul>
-          <li>Java and object-oriented programming concepts</li>
-          <li>Web fundamentals (HTTP, REST, APIs)</li>
-          <li>Databases and SQL</li>
-          <li>Framework notes and best practices</li>
-          <li>Code examples and explanations</li>
+          <li>Concept de programmation orienté objet</li>
+          <li>Différents langages et frameworks (Java, Python, Angular...)</li>
+          <li>Fondamentaux web (HTTP, REST, APIs)</li>
+          <li>Base de données et SQL</li>
+          <li>Notes sur les frameworks et les bonnes pratiques</li>
+          <li>Exemple de code</li>
         </ul>
 
-        <h2>How this notebook is organized</h2>
         <p>
-          Each topic is written in Markdown and organized by category. The goal
-          is to keep concepts clear, concise, and easy to revisit.
-        </p>
-
-        <p>
-          This notebook is a living project and will evolve throughout my
-          training and future professional experience.
+          Ceci est un projet évolutif qui se développera tout au long de ma
+          formation et de mes futures expériences.
         </p>
       </main>
     </Layout>
