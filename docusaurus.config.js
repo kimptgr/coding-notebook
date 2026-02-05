@@ -65,6 +65,7 @@ const config = {
             label: "Docs",
           },
           { to: "/docs/category/java", label: "Java", position: "left" },
+          { to: "/docs/raccourcis/ide", label: "R&Co", position: "left" },
           {
             href: "https://github.com/kimptgr/coding-notebook",
             label: "GitHub",
