@@ -68,12 +68,22 @@ Permet de créer le war avec une image gradle puis de l'utiliesr avec une image 
 Pour les logs, le dev
 
 ## Réseaux docker
-par défault un conteneur pour communiqué par un bridge
-Permet la communication entre 2 conteneurs par les noms de contairs et non par l'ip + port de la machine hôte
+par défault un conteneur pour communiqué par un **bridge**
+Permet la communication entre 2 conteneurs par les noms de conteneur et non par l'ip + port de la machine hôte
 
-Réseau de machine hôte: pour gain de performance
-network_mode: host
+- Réseau de machine hôte: pour gain de performance
+- network_mode: host
 ## Docker-compose
 Définir et lancer plusieurs conteneurs ensemble, de manière déclarative, via un seul fichier docker-compose.yml
-
+> Volume toujours nommé 
 Compose crée automatiquement un bridge network
+
+1. On monte service par service
+```yml
+build
+    context: . # chemin par rapport au docker compose
+    dockerfile: Dockerfile.dev
+ports:
+    - "8081:8080" # chemin depuis exterieur: chemin interne
+depends_on: # si a besoin qu'un autre service soit au moins en cours de démarrage
+```
