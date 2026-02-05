@@ -1,3 +1,7 @@
+---
+title: Lombock
+---
+
 `@Data`
 Génère sur TOUS les champs 
 - getters / setters
@@ -12,3 +16,4 @@ Génère sur TOUS les champs
 
 `@MappedSuperclass` Cette classe n’est pas une entité,
 mais ses champs sont hérités et mappés dans les entités filles
+
