@@ -85,4 +85,76 @@ public class ClasseController{
 }
 ```
 
+
+## Annotation de classe
+`@Schema(name = "...", description = "...")`
 Des clefs pour l'internationalisation peuvent être utilisés.
+## Annotation contrôleurs, classes
+- `@Operation` 
+Décrit une opération d'API
+- @ApiResponses / @ApiResponse
+```java
+@ApiResponses({
+    @ApiResponse(responseCode = "200", description = "OK"),
+    @ApiResponse(responseCode = "404", description = "Not found")
+})
+```
+Documente les réponses HTTP, 'Response**s**' est une annotation conteneur
+- @Content
+Décrit la structure d’un body
+```java
+
+@Content(
+    mediaType = "application/json",
+    array = @ArraySchema(schema = @Schema(implementation = UserDto.class
+```
+- @Schema
+Utilisé aussi dans les réponses, via @Content(schema = @Schema(...))
+```java
+@ApiResponse(
+   responseCode = "200",
+   description = "Utilisateur récupéré",
+   content = @Content(schema = @Schema(implementation = UserDto.class))
+)
+```
+
+## Annotation sur les entités
+- `@Schema(description = "Âge de l'utilisateur", example = "35", minimum = "0", maximum = "120") prinvate Integer age;` 
+documente un champ, un type, une classe, un record
+- `@Schema(hidden = true)` ex `@ApiModelProperty(hidden = true)` : cache une propriété, une classe
+```
+@ArraySchema(
+    schema = @Schema(description = "Tags", example = "['java', 'spring']")
+)
+private List<String> tags;
+```
+documente un tableau
+
+## Annotations jakarta qui influence 
+```
+@NotNull
+@Size, @Size(min = 3, max = 50)
+@Min
+@Max
+@Email
+@Pattern
+@Past, @PastOrPresent
+@Future, @FutureOrPresent
+```
+
+Media / Modèles
+
+@Schema
+@ArraySchema
+@Content
+@Encoding
+@ExampleObject
+
+API / Opérations
+
+@Operation
+@ApiResponse
+@ApiResponses
+@Parameter
+@Parameters
+@RequestBody
