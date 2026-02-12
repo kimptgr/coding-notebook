@@ -16,3 +16,5 @@ Pas de perte de performances avec jpa // crud
 
 rabbit mq
 cache.size 
+
+> Make jars not wars

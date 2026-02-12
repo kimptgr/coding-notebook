@@ -8,14 +8,16 @@ title : Raccourcis & CO
 - CtrlAltMajP Reformat with Prettier
 - Alt + inser pour générer 
 - Ctrl 2 fois et maintenir appuyer pour avoir 2 curseurs
-- win + . pour emojis 
 - /** + entrer pour javadoc auto
 
 ### VSCode
-- shift+alt+a commentaire
+- shift + alt + a commentaire
 - alt  + shift + f tabulations auto
 - Shift + F12 : trouver les références
+- ctrl + shift + k : supprimer une ligne
 
+### Windows 
+- - win + . pour emojis 
 
 ### Docker CLI
 ```
