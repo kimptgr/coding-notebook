@@ -84,7 +84,7 @@ Puis dans le code `import { Pic } from `
 - directive : classe qui ajoute du comportement aux éléments Angular
   1. [ngStyle] applique des styles dynamiques, prend en argument un objet où les clefs sont les styles css à modifier en en valeur les valeurs à prendre de ceux-ci
   Dans les nouvelles versions il faut importer angular common
-  3. ```
+  ```
      import { CommonModule } from '@angular/common';import { NgStyle } from '@angular/common';
      @Component({
   selector: 'app-pic-knit',
@@ -92,3 +92,57 @@ Puis dans le code `import { Pic } from `
   ```
   En html `span [ngStyle]="{ color: 'rgb(0, ' + pic.likes + ', 0)' }">`
   
+2. [ngClass] applique dynamiquement une classe. On importe la classe `imports: [NgClass]` dans le component NgClass + `[ngClass]="{nomdemaclasse: condition}"` dans la balise html
+
+## Pipes
+Outils pour formater une valeur
+### String
+- `<h2>{{ titredemabdd.title | uppercase }}</h2>` + `imports: [UpperCasePipe]` (from angular common)
+- lowercase 
+- titlecase
+### Dates
+DatePipe est configurable
+- `{{ createdAt | date: 'd MMMM yyyy, à HH:mm' }}`
+- ou dd/MM/yy
+- + à https://v17.angular.io/api/common/DatePipe
+On peut changer la locale to fr dans le main.ts et dans la config
+- main.ts
+```
+import { registerLocaleData } from '@angular/common';
+import * as fr from '@angular/common/locales/fr';
+
+registerLocaleData(fr.default);
+```
+- main.config.ts
+```
+import { ApplicationConfig, LOCALE_ID, provideBrowserGlobalErrorListeners } from '@angular/core';
+
+export const appConfig: ApplicationConfig = {
+  providers: [
+  ...,
+    { provide: LOCALE_ID, useValue: 'fr-FR' }
+  ]
+};
+```
+### Nombres
+- DecimalPipe arrondi à l'entier `<p>{{ 4346234.36 | number: '1.0-0' }}</p>`
+- PercentPipe arrondi à 33.6% `<p>{{ 0.336 | percent: '1.0-1' }}</p>
+- CurrencyPipe
+chiffresMinAvantVirgule.chiffresMinAprèsVirgule-chiffresMaxAprèsVirgule'
+
+## Service
+On déclare une classe comme injectable depuis la racine pour qyu'il n'y ait qu'une instance partagée 
+    ```@Injectable({ 
+        providedIn: 'root'
+    })
+    export class PicKnitService {
+
+    private pics : PicKnitModel[] = [//...];
+
+  getPicKnits(): PicKnitModel[]{
+    return [...this.pics];
+  }
+}
+    ```
+    Utilisation du spread operator pour copie du tableau mais pas des objets 
+- injection de dépendance dans le cosntructeur du composant avec `constructor(private Service: service) }`
