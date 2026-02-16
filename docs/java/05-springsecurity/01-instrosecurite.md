@@ -24,6 +24,13 @@ implementation 'org.springframework.boot:spring-boot-starter-security'
 - login par défault : user
 - mdp généré par spring visible dans la console
 
+> Instancier un InMemoryUserDetailsManager personnalisé
+Dans application-dev.properties
+```
+spring.security.user.name=
+spring.security.user.password= 
+spring.security.user.roles # optionnel, par défaut USER
+```
 ### Configuration de la gestion de l'authentification et des habilitations
 
 Authentification :
