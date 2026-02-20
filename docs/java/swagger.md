@@ -90,6 +90,7 @@ public class ClasseController{
 `@Schema(name = "...", description = "...")`
 Des clefs pour l'internationalisation peuvent être utilisés.
 ## Annotation contrôleurs, classes
+
 - `@Operation` 
 Décrit une opération d'API
 - @ApiResponses / @ApiResponse
@@ -158,3 +159,8 @@ API / Opérations
 @Parameter
 @Parameters
 @RequestBody
+
+# Récapitulatif des changements 
+Swagger 2 -> OpenApi3
+- @ApiOperation(value = "Get all stations refresh", notes = "") => @Operation(summary = "Get example data", description = "Returns example data if available")
+- @ApiResponse(code = 404, message = "Not found") => @ApiResponse(responseCode = "200", description = "Successfully retrieved data")
