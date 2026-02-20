@@ -10,7 +10,7 @@ Mais annotation @Nullable si elle est indispensable (comme est implicite ce n'es
 `import org.jspecify.annotations.Nullable;`
 PAS jakarta.annotation.nullable
 
-- Retour de repository/service → Optional<T>
+- Retour de repository/service → `Optional<T>`
 - Paramètre potentiellement null → @Nullable (JSpecify) pour analyse par IDE
 - DTO → Jakarta Validation (@NotNull) (Nullable implicite)
 
