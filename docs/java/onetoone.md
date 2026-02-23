@@ -3,7 +3,7 @@ title: OneToOne
 ---
 # OneToOne
 ## Unidirectionnel
-Utilisateur <> Profile
+Utilisateur lié à Profile
 ```
 @Entity
 @Table(name = "users")
