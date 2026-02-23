@@ -3,6 +3,7 @@ Les annotations de validations de contraintes javax sont désormais remplacées 
 ```build.gradle
 implementation 'jakarta.validation:jakarta.validation-api:3.1.1'
 ```
+- Imports : javax.persistence.* → jakarta.persistence.*.
 `org.springframework.lang.Nullable` => déprécié
 `import jakarta.validation.constraints.NotNull;`
 
@@ -22,3 +23,22 @@ rabbit mq
 cache.size
 
 > Make jars not wars
+
+# Remplacer NamedNativeQuery
+- @NamedNativeQuery,  @SqlResultSetMapping remplacés par Native query + interface
+```
+public interface TasseView {
+    Integer getId();
+    String getLibelle();
+```
+```
+@Query(value = """
+        SELECT 
+            t.id AS id,
+            t.libelle AS libelle
+        FROM tasse t
+        WHERE t.id = :id
+        """,
+        nativeQuery = true)
+    Optional<TasseView> findTasseById(@Param("id") Integer id);
+```
