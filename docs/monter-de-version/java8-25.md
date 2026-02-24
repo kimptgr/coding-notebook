@@ -42,3 +42,6 @@ public interface TasseView {
         nativeQuery = true)
     Optional<TasseView> findTasseById(@Param("id") Integer id);
 ```
+
+# Controller
+Ne pas renvoyer d'interfaces dans les entités, préférer des dtos même s'il faut les mapper avant. (plus rapide)

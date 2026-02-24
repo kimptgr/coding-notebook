@@ -32,3 +32,12 @@ Modifier le dernier commit :
 `git commit --amend --no-edit`
 - modifier le messages
 `git commit --amend -m "Nouveau message de commit"`
+
+# Renommer branche
+```bash
+git branch -m nouveau_nom // en étant sur la bonne branche ou 
+git branch -m ancien_nom nouveau_nom
+git branch // vérifier les changements
+git push origin --delete ancien_nom 
+git push origin -u nouveau_nom
+```
