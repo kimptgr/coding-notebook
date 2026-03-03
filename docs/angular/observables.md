@@ -2,16 +2,20 @@
 title: Les observables
 ---
 # Observables
+
 Convention de nommage pour toute variable contenant un observable: **monObservable$**
 
+À chaque souscription, une nouvelle instance de l'observable.
 
-À chaque souscription, une nouvelle instance de l'observable. 
 ## Souscrire
+
 - `interval$.subscribe(value => console.log(value));` à proscrire
 - `<h1>{{ interval$ | async }}</h1> `pipe async qui souscrit directement dans l'html
 
 ## Opérateurs
+
 Avec `.pipe()` permet de mettre des opérateurs. Si plusieurs les séparer par des virgules
+
 - opérateur **map()** de rxjs/operators `this.interval$ = interval(1000).pipe(map(value => value * 10));`
 - opérateur **filter()**
 - opérateur **tap()** permet de réagir à une émission sans la modifier pour obtenir un side effect `tap(text => this.logger(text))`
@@ -22,9 +26,11 @@ Avec `.pipe()` permet de mettre des opérateurs. Si plusieurs les séparer par d
 - `switchMap` projette vers un Observable et annule automatiquement le précédent dès qu’une nouvelle valeur arrive (annule les anciennes)
 
 ## Se désabonner
+
 - Si on sait après combien d'émission on veut le supprimer, opérateur `take(nbdefois)`
 - Lifecyclehook `OnDestroy`. Création d'un `Subject` qui est un type d'observable qui émet à la demande avec sa méthode `next()`. On le fait émettre lors de la destruction du component et on utilise l'opérateur `takeUntil()`
-- ```
+
+```java
   export class PicKnitList implements OnInit, OnDestroy{
   private destroy$!: Subject<boolean>
 
@@ -41,4 +47,5 @@ Avec `.pipe()` permet de mettre des opérateurs. Si plusieurs les séparer par d
     this.destroy$.next(true);
   }
 ```
+
 Les observables souscrit avec le pipe async sont automatiquement déssouscrit
