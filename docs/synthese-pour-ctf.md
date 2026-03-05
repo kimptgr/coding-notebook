@@ -14,7 +14,7 @@ title: Techniques pour CTF
 ### 2. Analyse Réseau (Forensic & Network)
 
 * **Analyse de trafic avec Wireshark :**
-  * Recherche de chaînes de caractères en clair (comme un flag "ENI{") dans des protocoles non sécurisés tels que **FTP**.
+  * Recherche de chaînes de caractères en clair (comme un flag "ENI\{") dans des protocoles non sécurisés tels que **FTP**.
   * Extraction d'objets (images, pages HTML, fichiers ZIP ou archives RAR) via les menus d'exportation HTTP ou SMB.
   * Analyse de protocoles d'authentification (NTLM, Kerberos AS-REQ/AS-REP) pour extraire des hashs de session.
 * **Analyse de systèmes Windows :** Utilisation de **Mimikatz** pour analyser des dumps de processus (**LSASS**) ou des ruches de registre (**SAM, SECURITY, SYSTEM**) afin de récupérer des mots de passe en clair ou des hashs NTLM.
