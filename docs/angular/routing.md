@@ -17,7 +17,7 @@ export const routes: Routes = [
 ];
 ```
 
-2### Affichage des vues
+### Affichage des vues
 
 Dans le composant racine :
 
@@ -91,7 +91,7 @@ Angular ne recrée pas le composant
 
 Il faut les [] pour passer un tableau.
 
-Route active 
+Route active
 
 ```html
 <a routerLink="/about" routerLinkActive="active">À propos</a>
@@ -126,6 +126,8 @@ UrlTree (meilleure pratique que navigate + false)
 ### Guard
 
 Avec Angular cli `ng g guard nom-du-guard`
+
+On inject le service avec `inject(AuthService);`
 
 ```ts
 import { CanActivateFn, inject } from '@angular/router';
