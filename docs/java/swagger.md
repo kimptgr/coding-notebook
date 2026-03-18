@@ -164,3 +164,21 @@ API / Opérations
 Swagger 2 -> OpenApi3
 - @ApiOperation(value = "Get all stations refresh", notes = "") => @Operation(summary = "Get example data", description = "Returns example data if available")
 - @ApiResponse(code = 404, message = "Not found") => @ApiResponse(responseCode = "200", description = "Successfully retrieved data")
+
+Old :
+```
+@ApiModelProperty(
+value = "First name of the user",
+name = "firstName",
+dataType = "String",
+example = "John"
+)
+```
+New : 
+```
+@Schema(
+description = "First name of the user",
+type = "string",
+example = "John"
+)
+```
