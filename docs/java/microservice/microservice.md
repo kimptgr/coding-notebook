@@ -12,7 +12,10 @@ Spring Boot propose un un écosystème **Spring Cloud** pour gérer des architec
 - Spring Cloud Sleuth & Zipkin	Traçage distribué pour suivre une requête à travers plusieurs microservices.
  
 ## Créer une application
+
+
 ## Ajouter un module : ApiService
+
 - Les starters: 
     - Spring Web (Permet d’exposer des API REST en mode Servlet (Spring MVC))
     - Spring Data Jpa (ORM + Repositories JPA)
