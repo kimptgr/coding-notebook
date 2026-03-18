@@ -1,5 +1,5 @@
 ---
-title: One To Many
+title: Relation One To Many
 ---
 `@OneToMany` Sur le parent qui possède +rs enfants
 # Définition et Mapping

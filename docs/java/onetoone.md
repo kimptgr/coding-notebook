@@ -1,5 +1,5 @@
 ---
-title: OneToOne
+title: Relation One To One
 ---
 # OneToOne
 ## Unidirectionnel

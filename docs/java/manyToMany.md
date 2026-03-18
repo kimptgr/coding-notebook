@@ -1,5 +1,5 @@
 ---
-title: Many To many
+title: Relation Many To many
 ---
 # Many to Many avec JPA
 Bonne pratique entité pivot explicite + une clef composite
