@@ -20,11 +20,14 @@ title : Raccourcis & CO
 - - win + . pour emojis 
 
 ### Docker CLI
+- `docker -d` lancer docker daemon
 - `docker ps` liste les containers qui tournent `-a` pour tous
 - `docker exec -it` ligne de cmd dans un container
 - `docker rename OLD_NAME NEW_NAME`
 - `docker images` voir les images
 - `docker logs CONTAINER` voir les logs
+
+
 ```
 docker-compose up --build -d
 docker-compose stop
