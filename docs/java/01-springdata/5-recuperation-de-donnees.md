@@ -5,7 +5,7 @@ sidebar_position: 5
 
 ## JPQL & requêtes
 
-# JPQL
+### JPQL
 
 - Orienté objets
 - Indépendant du SGBD
@@ -16,7 +16,7 @@ sidebar_position: 5
 Employee findByEmail(@Param("email") String email);
 ```
 
-# Méthodes dérivées
+### Méthodes dérivées
 
 ```java
 List<Employee> findByLastNameAndFirstName(String last, String first);
@@ -29,7 +29,7 @@ List<Employee> findByLastNameAndFirstName(String last, String first);
 - LessThan, GreaterThan
 - OrderBy
 
-# SQL natif
+### SQL natif
 
 ```java
 @Query(
@@ -42,3 +42,6 @@ List<Employee> findAdmins();
 
 - ⚠ dépendant du SGBD
 - ⚠ pagination / tri limités
+
+## Récupérer un DTO
+

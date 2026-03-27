@@ -46,3 +46,8 @@ docker-compose -v
 - ctrl maj s enregistrer sous
 - win + r pour exécuter puis cmd
 - alt F4 
+
+### Dbeaver
+- Ctrl + /
+- ctrl + maj +/ pour commenter +rs lignes
+- `'2026-03-01 23:00:00'` pour écrire une date

@@ -1,11 +1,32 @@
 ---
-title: Relation Many To many
+title: Relation Many To Many
 ---
-# Many to Many avec JPA
-Bonne pratique entité pivot explicite + une clef composite
-## Entité pivot
+
+# Many to Many
+
+Bonne pratique entité pivot explicite + une clef composite si la table pivot contient des colonnes supplémentaires.
+
+## Sans entité pivot
+
+```java
+    @ManyToMany(
+            targetEntity = Project.class, fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "user_project",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id")
+    )
+    @NotAudited
+    protected Set<Project> userProjectList = new HashSet<>();
+```
+
+## Entité pivot + clef composite
+
+### Entité pivot
+
 `@EmbeddedId` doit être initialisée sinon NPE quand JPA essaye de setter, 
 > `@MapsId` : signal que c'est une partie de la clef primaire, il porte le même nom que le champ dans la clef composite notée par `@Embeddable`
+
 ```java
 @Entity
 @Table(name = "user_project")
@@ -39,7 +60,8 @@ public class UserProject {
 
 ```
 
-## Clef composite
+### Clef composite
+
 ```java
 @Embeddable
 public class UserProjectId implements Serializable {
@@ -51,7 +73,8 @@ public class UserProjectId implements Serializable {
 }
 ```
 
-## Entités liées
+### Entités liées
+
 ```java
 @Entity
 @Table(name = "projects")
@@ -72,7 +95,8 @@ public class Project {
 }
 ```
 
-## Repository du pivot
+### Repository du pivot
+
 ```java
 public interface UserProjectRepository
         extends JpaRepository<UserProject, UserProjectId> {
