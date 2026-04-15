@@ -1,0 +1,61 @@
+---
+title: Test d'API avec Postman
+---
+
+import CP from '/img/sonar/create-project.png';
+
+<img src={CP} alt="" style={{width: 250}} />
+
+ ![Image du site pour télécharger](\img\sonar\download-sonar-scanner.png)
+
+
+## Tests
+
+On écrit les tests sous forme:
+
+```javascript
+pm.test("Check if the response status code is 200", function () { 
+    pm.expect(pm.response.code).to.equal(200); 
+});
+//...
+    pm.expect(res).to.have.all.keys("name", "birthDate"); // clefs obligatoire sans autres clefs additionnels
+    pm.expect(res).to.include.keys('surname') // clefs possibles
+    
+//...
+```
+
+- Accès au Json : `let res = response.json()`
+- Accès à une variable d'environnement: ``
+- Vider une variable: `pm.collectionVariables.unset("nomVariable");`
+
+### Null
+
+- vérifier que null `pm.expect(champ).to.eql(null);`
+
+### Nombres
+
+- est un nombre : `pm.expect(pm.response.json()).to.be.a("number");`
+- > 0 `pm.expect(pm.response.json()).to.be.above(0);`
+- >= 0 `pm.expect(pm.response.json()).to.be.at.least(0);`
+
+### String
+
+### Date
+
+- `pm.expect(new Date(item.date).toString()).to.not.equal("Invalid Date");`
+
+### Boolean
+
+- `pm.expect(truck.deleted).to.be.a("boolean");`
+
+### Enumérations
+
+- `pm.expect(valeursAutorisees).to.include(jsonData);`
+
+### Null
+
+-`pm.expect(truck.ekotruckId).to.eql(null);`
+
+### Array
+
+- `pm.expect(Array.isArray(res)).to.be.true;`
