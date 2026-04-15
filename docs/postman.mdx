@@ -44,6 +44,35 @@ pm.test("Check if the response status code is 200", function () {
 
 - `pm.expect(new Date(item.date).toString()).to.not.equal("Invalid Date");`
 
+```javascript
+// Exemple de dates pour comparaison
+let date1 = pm.response.json().startDate; // Suppose que la réponse JSON a un champ startDate
+let date2 = pm.response.json().endDate;   // Suppose que la réponse JSON a un champ endDate
+
+// Convertir les chaînes en objets Date
+let d1 = new Date(date1);
+let d2 = new Date(date2);
+
+// Comparer les dates
+pm.test("La date de début est antérieure à la date de fin", function () {
+    pm.expect(d1 < d2).to.be.true;
+});
+
+// Comparer l'égalité
+pm.test("Les deux dates sont identiques", function () {
+    pm.expect(d1.getTime()).to.eql(d2.getTime());
+});
+
+// Comparer si une date est après une autre
+pm.test("La date de fin est après la date de début", function () {
+    pm.expect(d2 > d1).to.be.true;
+});
+```
+
+Mettre des dates en variables puis les supprimer
+
+- post script `pm.collectionVariables.unset("DATE1");`
+
 ### Boolean
 
 - `pm.expect(truck.deleted).to.be.a("boolean");`
@@ -59,3 +88,11 @@ pm.test("Check if the response status code is 200", function () {
 ### Array
 
 - `pm.expect(Array.isArray(res)).to.be.true;`
+
+```js
+pm.test("Check if response is an empty array", function () {
+    let res = pm.response.json();
+    pm.expect(Array.isArray(res)).to.be.true;
+    pm.expect(res).to.have.length(0);
+})
+```
