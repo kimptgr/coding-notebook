@@ -98,4 +98,5 @@ tail -f app.log                    # regarde les logs en direct
 ps aux | grep java                 # cherche les processus Java
 find . -name "*.tmp" | xargs rm    # supprime tous les .tmp
 grep -riv "PAY" . | wc -l          # compte les lignes sans PAY
+du -h /var/log                     # taille d'un dossier DiskUsage Human-readable -h en giga sinon octets
 ```
