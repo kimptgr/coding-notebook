@@ -17,3 +17,5 @@ Génère sur TOUS les champs
 `@MappedSuperclass` Cette classe n’est pas une entité,
 mais ses champs sont hérités et mappés dans les entités filles
 
+
+`@Accessors(chain = true)` ermet de chainer les setter `var Janie = new User().setFirstName('Janie).setName('Doe');`
